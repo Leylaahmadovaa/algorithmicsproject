@@ -5,191 +5,560 @@
   font-family: "Roboto", serif;
 }
 body {
-  background-color: white;
   background-image: url(https://i.pinimg.com/736x/e9/a3/67/e9a36755e30b1582285bd6a5d36a9d43.jpg);
   background-size: cover;
   background-repeat: repeat-y;
 }
-.project {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 3%;
-}
-.project>h1{
-  color: #60507d;
-  font-size: 60px;
-  font-weight: 900;
-  text-decoration: underline;
-  cursor: default;
-}
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 30px;
-  width: 100%;
-  border-top: 5px solid indigo;
-  padding: 20px;
-  place-items: center;
-  padding-top:40px;
-}
-.item {
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  justify-content: space-between;
-  align-items: center;
-  border: 3px solid indigo;
-  box-shadow: 2px 2px 2px gray;
-  transition: all 100ms;
-  padding: 15px;
-  background-color: rgb(245, 231, 255);
-  border-radius: 10px;
-}
-.item:hover {
-  transform: translateY(-3px);
-}
-.item > .editButton,
-.deleteButton,.saveButton {
-  border: 3px solid rgb(124, 78, 157);
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75%;
-  margin-bottom: 8px;
-  margin-top: 5px;
-  border-radius: 10px;
-  height: 35px;
-  color: white;
-  font-weight: 700;
-  background-color: rgb(150, 98, 186);
-  font-size: 20px;
-  padding: 5px;
-  transition: all 0.2s;
-}
-.editButton:hover{
+@media only screen and (min-width: 1024px) {
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 3%;
+  }
+  .project > h1 {
+    color: #60507d;
+    font-size: 60px;
+    font-weight: 900;
+    text-decoration: underline;
+    cursor: default;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    width: 100%;
+    border-top: 5px solid indigo;
+    padding: 20px;
+    place-items: center;
+    padding-top: 40px;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid indigo;
+    box-shadow: 2px 2px 2px gray;
+    transition: all 100ms;
+    padding: 15px;
+    background-color: rgb(245, 231, 255);
+    border-radius: 10px;
+  }
+  .item:hover {
+    transform: translateY(-3px);
+  }
+  .item > .editButton,
+  .deleteButton,
+  .saveButton {
+    border: 3px solid rgb(124, 78, 157);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-bottom: 8px;
+    margin-top: 5px;
+    border-radius: 10px;
+    height: 35px;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(150, 98, 186);
+    font-size: 20px;
+    padding: 5px;
+    transition: all 0.2s;
+  }
+  .editButton:hover {
     background-color: #ffffff;
     color: indigo;
     cursor: pointer;
   }
-  .saveButton:hover{
-  background-color: #ffffff;
-  color: indigo;
-  cursor: pointer;
-  
-}
-.deleteButton:hover{
-  background-color: #ffffff;
-  color: indigo;
-  cursor: pointer;
-}
-.addNew {
-  border: 2px solid indigo;
-  cursor: pointer;
-  width: 20%;
-  height: 50px;
-  border-radius: 10px;
-  align-self: flex-end;
-  margin-right: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(150, 98, 186);
-  font-weight: 900;
-  color: white;
-  transition: all 0.2s;
-}
-.addNew:hover {
-  box-shadow: 3px 2px 7px #60507d;
-  background-color: white;
-  translate: -0.5px -0.5px;
-  color: #60507d;
-}
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-  font-size: 25px;
-  font-weight: 700;
-  color: #60507d;
-}
+  .saveButton:hover {
+    background-color: #ffffff;
+    color: indigo;
+    cursor: pointer;
+  }
+  .deleteButton:hover {
+    background-color: #ffffff;
+    color: indigo;
+    cursor: pointer;
+  }
+  .addNew {
+    border: 2px solid indigo;
+    cursor: pointer;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(150, 98, 186);
+    font-weight: 900;
+    color: white;
+    transition: all 0.2s;
+  }
+  .addNew:hover {
+    box-shadow: 3px 2px 7px #60507d;
+    background-color: white;
+    translate: -0.5px -0.5px;
+    color: #60507d;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: #60507d;
+  }
 
-.info > input {
-  height: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  border: 2px solid indigo;
-  height: 30px;
-  font-size: 20px;
-  padding: 5px;
-  color: indigo;
+  .info > input {
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border: 2px solid indigo;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    color: indigo;
+  }
+  .info > input:hover {
+    cursor: default;
+  }
+  .addNewWindow {
+    top: 30%;
+    width: 50%;
+    border: solid 1px black;
+    background-color: rgb(245, 231, 255);
+    border: 5px solid indigo;
+    border-radius: 20px;
+    height: 500px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    padding-left: 10%;
+    z-index: 1;
+    justify-content: center;
+    gap: 20px;
+  }
+  .addNewWindow > input {
+    width: 80%;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border: 2px solid indigo;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    color: indigo;
+  }
+  .addNewWindow > label {
+    font-size: 30px;
+    color: #60507d;
+    font-weight: 800;
+  }
+  .addNewWindow > h1 {
+    font-size: 35px;
+    color: indigo;
+    text-decoration: underline;
+    font-weight: 800;
+    align-self: center;
+    transform: translateX(-20%);
+  }
+  .addButton {
+    border: 2px solid indigo;
+    cursor: pointer;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(150, 98, 186);
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px rgb(123, 95, 143);
+    transition: all 0.2s;
+  }
 }
-.info > input:hover {
-  cursor: default;
-}
-.addNewWindow {
-  top: 30%;
-  width: 50%;
-  border: solid 1px black;
-  background-color: rgb(245, 231, 255);
-  border: 5px solid indigo;
-  border-radius: 20px;
-  height: 500px;
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  padding-left: 10%;
-  z-index: 1;
-  justify-content: center;
-  gap: 20px;
+@media only screen and (max-width: 1024px) {
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 3%;
+  }
+  .project > h1 {
+    color: #60507d;
+    font-size: 60px;
+    font-weight: 900;
+    text-decoration: underline;
+    cursor: default;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+    width: 100%;
+    border-top: 5px solid indigo;
+    padding: 20px;
+    place-items: center;
+    padding-top: 40px;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid indigo;
+    box-shadow: 2px 2px 2px gray;
+    transition: all 100ms;
+    padding: 15px;
+    background-color: rgb(245, 231, 255);
+    border-radius: 10px;
+  }
+  .item:hover {
+    transform: translateY(-3px);
+  }
+  .item > .editButton,
+  .deleteButton,
+  .saveButton {
+    border: 3px solid rgb(124, 78, 157);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-bottom: 8px;
+    margin-top: 5px;
+    border-radius: 10px;
+    height: 35px;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(150, 98, 186);
+    font-size: 20px;
+    padding: 5px;
+    transition: all 0.2s;
+  }
+  .editButton:hover {
+    background-color: #ffffff;
+    color: indigo;
+    cursor: pointer;
+  }
+  .saveButton:hover {
+    background-color: #ffffff;
+    color: indigo;
+    cursor: pointer;
+  }
+  .deleteButton:hover {
+    background-color: #ffffff;
+    color: indigo;
+    cursor: pointer;
+  }
+  .addNew {
+    border: 2px solid indigo;
+    cursor: pointer;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(150, 98, 186);
+    font-weight: 900;
+    color: white;
+    transition: all 0.2s;
+  }
+  .addNew:hover {
+    box-shadow: 3px 2px 7px #60507d;
+    background-color: white;
+    translate: -0.5px -0.5px;
+    color: #60507d;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: #60507d;
+  }
 
+  .info > input {
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border: 2px solid indigo;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    color: indigo;
+  }
+  .info > input:hover {
+    cursor: default;
+  }
+  .addNewWindow {
+    top: 30%;
+    width: 50%;
+    border: solid 1px black;
+    background-color: rgb(245, 231, 255);
+    border: 5px solid indigo;
+    border-radius: 20px;
+    height: 500px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    /* padding-left: 10%; */
+    z-index: 1;
+    justify-content: center;
+    gap: 20px;
+  }
+  .addNewWindow > input {
+    width: 80%;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border: 2px solid indigo;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    color: indigo;
+    margin-left: 10%;
+  }
+  .addNewWindow > label {
+    font-size: 20px;
+    color: #60507d;
+    font-weight: 800;
+    margin-left: 10%;
+  }
+  .addNewWindow > h1 {
+    font-size: 25px;
+    color: indigo;
+    text-decoration: underline;
+    font-weight: 800;
+    align-self: center;
+    /* transform: translateX(1%); */
+  }
+  .addButton {
+    border: 2px solid indigo;
+    cursor: pointer;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(150, 98, 186);
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px rgb(123, 95, 143);
+    transition: all 0.2s;
+  }
 }
-.addNewWindow>input{
-  width: 80%;
-  height: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  border: 2px solid indigo;
-  height: 30px;
-  font-size: 20px;
-  padding: 5px;
-  color: indigo;
-}
-.addNewWindow>label{
-  font-size: 30px;
-  color: #60507d;
-  font-weight: 800;
+@media only screen and (max-width: 768px) {
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 3%;
+  }
+  .project > h1 {
+    color: #60507d;
+    font-size: 50px;
+    font-weight: 900;
+    text-decoration: underline;
+    cursor: default;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 30px;
+    width: 100%;
+    border-top: 5px solid indigo;
+    padding: 20px;
+    place-items: center;
+    padding-top: 40px;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid indigo;
+    box-shadow: 2px 2px 2px gray;
+    transition: all 100ms;
+    padding: 15px;
+    background-color: rgb(245, 231, 255);
+    border-radius: 10px;
+  }
+  .item:hover {
+    transform: translateY(-3px);
+  }
+  .item > .editButton,
+  .deleteButton,
+  .saveButton {
+    border: 3px solid rgb(124, 78, 157);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-bottom: 8px;
+    margin-top: 5px;
+    border-radius: 10px;
+    height: 35px;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(150, 98, 186);
+    font-size: 20px;
+    padding: 5px;
+    transition: all 0.2s;
+  }
+  .editButton:hover {
+    background-color: #ffffff;
+    color: indigo;
+    cursor: pointer;
+  }
+  .saveButton:hover {
+    background-color: #ffffff;
+    color: indigo;
+    cursor: pointer;
+  }
+  .deleteButton:hover {
+    background-color: #ffffff;
+    color: indigo;
+    cursor: pointer;
+  }
+  .addNew {
+    border: 2px solid indigo;
+    cursor: pointer;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(150, 98, 186);
+    font-weight: 900;
+    color: white;
+    transition: all 0.2s;
+    font-size: small;
+  }
+  .addNew:hover {
+    box-shadow: 3px 2px 7px #60507d;
+    background-color: white;
+    translate: -0.5px -0.5px;
+    color: #60507d;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: #60507d;
+  }
 
-}
-.addNewWindow>h1{
-  font-size: 35px;
-  color: indigo;
-  text-decoration: underline;
-  font-weight: 800;
-  align-self: center;
-  transform: translateX(-20%);
-}
-.addButton{
-  border: 2px solid indigo;
-  cursor: pointer;
-  width: 20%;
-  height: 50px;
-  border-radius: 10px;
-  align-self: flex-end;
-  margin-right: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(150, 98, 186);
-  font-weight: 900;
-  color: white;
-  text-shadow: 2px 2px rgb(123, 95, 143);
-  transition: all 0.2s;
+  .info > input {
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border: 2px solid indigo;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    color: indigo;
+  }
+  .info > input:hover {
+    cursor: default;
+  }
+  .addNewWindow {
+    top: 30%;
+    width: 50%;
+    border: solid 1px black;
+    background-color: rgb(245, 231, 255);
+    border: 5px solid indigo;
+    border-radius: 20px;
+    height: 500px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    justify-content: center;
+    gap: 20px;
+  }
+  .addNewWindow > input {
+    width: 80%;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border: 2px solid indigo;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    color: indigo;
+    margin-left: 9%;
+  }
+  .addNewWindow > label {
+    font-size: 15px;
+    color: #60507d;
+    font-weight: 800;
+    margin-left: 9%;
+  }
+  .addNewWindow > h1 {
+    font-size: 20px;
+    color: indigo;
+    text-decoration: underline;
+    font-weight: 800;
+    text-align: center;
+  }
+  .addButton {
+    border: 2px solid indigo;
+    cursor: pointer;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(150, 98, 186);
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px rgb(123, 95, 143);
+    transition: all 0.2s;
+    margin-bottom: 10px;
+  }
 }
