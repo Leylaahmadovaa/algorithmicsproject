@@ -50,5 +50,5 @@
     border: solid 1px black;
     background-color: azure;
     height: 500px;
-    display: none;
+    /* display: none; */
 }
