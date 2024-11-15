@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uni front</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
- <body>
-    <div class="addNew" onclick="AddNew()">Add new</div>
-    <div class="addNewWindow">Add New Window
-        <input type="text" placeholder="from" id="from">
-        <input type="text" placeholder="to" id="to">
-        <input type="number" placeholder="amount" id="amount">
-        <button type="button" title="add" onclick="Add()">Add</button>
+  </head>
+  <body>
+    <div class="project">
+        <h1>TRANSACTION</h1>
+      <div class="addNew" onclick="AddNew()">ADD NEW +</div>
+      <div class="addNewWindow">
+        <h1>ADD NEW TRANSACTİON</h1>
+        <label for="from">FROM</label>
+        <input type="text" title="from" id="from" />
+        <label for="to">TO</label>
+        <input type="text" title="to" id="to" />
+        <label for="amount">AMOUNT</label>
+        <input type="number" title="amount" id="amount" />
+        <button type="button" class="addButton" title="add" onclick="Add()">ADD</button>
+      </div>
+      <div class="container"></div>
     </div>
-  <div class="container">
-  </div>
- </body>
+  </body>
 </html>
