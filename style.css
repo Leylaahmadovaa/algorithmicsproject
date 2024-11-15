@@ -45,3 +45,10 @@
 .info>input{
     height: 20px;
 }
+.addNewWindow{
+    width: 800px;
+    border: solid 1px black;
+    background-color: azure;
+    height: 500px;
+    display: none;
+}
