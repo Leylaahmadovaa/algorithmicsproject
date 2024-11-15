@@ -84,7 +84,6 @@ body {
   background-color: #ffffff;
   color: indigo;
   cursor: pointer;
-    
 }
 .addNew {
   border: 2px solid indigo;
@@ -117,9 +116,7 @@ body {
   font-weight: 700;
   color: #60507d;
 }
-.info > span {
-  /* text-decoration: underline; */
-}
+
 .info > input {
   height: 20px;
   border-radius: 10px;
@@ -166,7 +163,6 @@ body {
   color: indigo;
 }
 .addNewWindow>label{
-  /* transform: translateY(15px); */
   font-size: 30px;
   color: #60507d;
   font-weight: 800;

@@ -25,7 +25,6 @@ async function getİtems() {
 getİtems();
 
 async function sil(element) {
-    // confirm("Press a button!")
     if(confirm("Are you sure to delete this transaction cart?")){
   let idElement = element.parentElement; // item
   let id = idElement.querySelector(".id").innerHTML;
