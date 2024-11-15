@@ -1,6 +1,10 @@
+*{
+    padding: 0;
+    margin:0;
+}
 .container{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(2,700px);
     gap: 10px;
 }
 .item{
@@ -30,4 +34,14 @@
 .addNew{
     border: 1px solid black;
     width: 100px;
+}
+.info{
+    display: flex;
+    gap:5px;
+}
+.info>span{
+    text-decoration: underline;
+}
+.info>input{
+    height: 20px;
 }
