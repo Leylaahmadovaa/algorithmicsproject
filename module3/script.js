@@ -1,31 +1,82 @@
-let fromRUB = document.querySelector(".fromRUB");
-let fromUSD = document.querySelector(".fromRUB");
-let fromEUR = document.querySelector(".fromEUR");
-let fromGBP = document.querySelector(".fromGBP");
-let toRUB = document.querySelector(".toRUB");
-let toUSD = document.querySelector(".toRUB");
-let toEUR = document.querySelector(".toEUR");
-let toGBP = document.querySelector(".toGBP");
-let fromState="RUB"
-let toState="USD"
-
-async function getExchangeRates() {
+const apiUrl =
+  "https://v6.exchangerate-api.com/v6/6d1848629b338004876509e9/latest/";
+let fromState = "RUB";
+let toState = "USD";
+let fromInput = document.querySelector(".inputFrom");
+let toInput = document.querySelector(".inputTo");
+let fromButtons = document.querySelectorAll(".fromButtons div");
+let toButtons = document.querySelectorAll(".toButtons div");
+let leftConversion = document.querySelector(".leftConvervion");
+let rightConversion = document.querySelector(".rightConvervion");
+let icon = document.querySelector(".icon");
+let sidee = document.querySelector(".side");
+let side = false;
+async function fetchData(baseCurrency) {
   try {
-    const response = await fetch(
-      "https://v6.exchangerate-api.com/v6/6d1848629b338004876509e9/latest/USD"
-    );
-
-    if (!response.ok) {
-      throw new Error("API request failed");
-    }
-
+    const response = await fetch(`${apiUrl}${baseCurrency}`);
+    if (!response.ok) throw new Error("fetch failed");
     const data = await response.json();
-    console.log(data);
-
-    return data;
+    // console.log(data);
+    return data.conversion_rates;
   } catch (err) {
-    console.error("Error:", err.message);
+    console.error("error:", err.message);
+    alert("Failed to load rates. Please try again later.");
+    return null;
   }
 }
-
-getExchangeRates();
+function buttonSelection(buttons, isFromSide) {
+  buttons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      const selectedCurrency = button.textContent.trim();
+      if (
+        (isFromSide && selectedCurrency === toState) ||
+        (!isFromSide && selectedCurrency === fromState)
+      ) {
+        alert("Do not choose the same currency. Choose a different currency.");
+        return;
+      }
+      buttons.forEach((btn) => {
+        btn.style.backgroundColor = "white";
+        btn.style.color = "#959BA4";
+      });
+      button.style.backgroundColor = "#833AE0";
+      button.style.color = "white";
+      if (isFromSide) {
+        fromState = selectedCurrency;
+      } else {
+        toState = selectedCurrency;
+      }
+      conversion();
+    });
+  });
+}
+async function conversion() {
+  const rates = await fetchData(fromState);
+  if (!rates) return;
+  const rate = rates[toState];
+  toInput.value = (fromInput.value * rate).toFixed(2);
+  leftConversion.textContent = `1 ${fromState} = ${rate.toFixed(2)} ${toState}`;
+  rightConversion.textContent = `1 ${toState} = ${(1 / rate).toFixed(
+    2
+  )} ${fromState}`;
+}
+fromInput.addEventListener("input", () => {
+  conversion();
+});
+toInput.addEventListener("input", async () => {
+  const rates = await fetchData(toState);
+  if (!rates) return;
+  const rate = rates[fromState];
+  fromInput.value = (toInput.value * rate).toFixed(2);
+});
+conversion();
+buttonSelection(fromButtons, true);
+buttonSelection(toButtons, false);
+icon.addEventListener("click", () => {
+  side = !side;
+  if (side == true) {
+    sidee.style.display = "flex";
+  } else {
+    sidee.style.display = "none";
+  }
+});
