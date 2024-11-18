@@ -68,7 +68,7 @@ img{
 }
 .fromButtons, .toButtons{
     display: flex;
-    border: 1px solid #959BA4;
+    border: 1px solid #E5E5E5;
     border-radius: 3px;
     height: 30px;
     width: 100%;
@@ -82,6 +82,25 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-left: 1px solid #959BA4;
+    border-left: 1px solid #E5E5E5;
     width: 25%;
+}
+.fromInput, .toInput{
+    border: 1px solid #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    height: 102px;
+    border-radius: 1px;
+    justify-content: space-around;
+    padding-left: 15px;
+    gap: 10px;
+}
+.fromInput>input, .toInput>input{
+    border: none;
+    width: 90%;
+    font-weight: 700;
+    font-size: 36px;
+}
+.fromInput>p, .toInput>p{
+    color: #C6C6C6;
 }
