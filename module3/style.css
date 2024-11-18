@@ -2,6 +2,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Roboto", serif;
 }
 nav{
     background-color: #F5F5F6;
@@ -12,17 +13,25 @@ nav{
     justify-content: space-around;
 }
 img{
-    width: 10%;
-}
-.signInButton{
-    background-color: white;
+    width: 6%;
 }
 .menu{
     display: flex;
     justify-content: space-around;
     width: 50%;
     color: #959BA4;
+    font-weight: 500;
+    font-size: 11px;
 }
-.menu:first-child{
+.activeMenu{
     color: black;
+}
+.signInButton{
+    background-color: white;
+    width: 4%;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
 }
