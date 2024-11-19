@@ -13,9 +13,19 @@ let sidee = document.querySelector(".side");
 let side = false;
 async function fetchData(baseCurrency) {
   try {
+    if (!navigator.onLine) {
+      const cachedData = localStorage.getItem(baseCurrency);
+      if (cachedData) {
+        return JSON.parse(cachedData);
+      } else {
+        alert("no internet connection. please check network");
+        return null;
+      }
+    }
     const response = await fetch(`${apiUrl}${baseCurrency}`);
     if (!response.ok) throw new Error("fetch failed");
     const data = await response.json();
+    localStorage.setItem(baseCurrency, JSON.stringify(data.conversion_rates));
     // console.log(data);
     return data.conversion_rates;
   } catch (err) {
