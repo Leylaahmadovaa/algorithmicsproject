@@ -38,19 +38,24 @@ function buttonSelection(buttons, isFromSide) {
   buttons.forEach((button) => {
     button.addEventListener("click", async () => {
       const selectedCurrency = button.textContent.trim();
-      if (
-        (isFromSide && selectedCurrency === toState) ||
-        (!isFromSide && selectedCurrency === fromState)
-      ) {
-        alert("Do not choose the same currency. Choose a different currency.");
-        return;
-      }
       buttons.forEach((btn) => {
         btn.style.backgroundColor = "white";
         btn.style.color = "#959BA4";
       });
       button.style.backgroundColor = "#833AE0";
       button.style.color = "white";
+      if (
+        (isFromSide && selectedCurrency === toState) ||
+        (!isFromSide && selectedCurrency === fromState)
+      ) {
+        toInput.value = fromInput.value;
+        fromInput.value = toInput.value;
+        leftConversion.textContent = `1 ${selectedCurrency} = 1 ${selectedCurrency}`;
+        rightConversion.textContent = `1 ${selectedCurrency} = 1 ${selectedCurrency}`;
+
+        return;
+      }
+
       if (isFromSide) {
         fromState = selectedCurrency;
       } else {
